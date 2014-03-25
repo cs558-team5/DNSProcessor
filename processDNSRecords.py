@@ -4,14 +4,14 @@ import time
 import sys
 
 # Input filename
-filename = 'biz.dnsrecords'
+filename = 'org.dnsrecords'
 
 # Remove file and create empty one
 try:
-	os.remove('biz.domains')
-	os.system('touch biz.domains')
+	os.remove('org.domains')
+	os.system('touch org.domains')
 except OSError:
-	os.system('touch biz.domains')
+	os.system('touch org.domains')
 
 
 num_lines = sum(1 for line in open( filename ))
@@ -39,12 +39,12 @@ for line in ins:
 	#print "{0:.0f}%".format(float(percentDone) * 100)
 	
 	# Add to file
-	open("biz.domains","a").write(domain)
+	open("org.domains","a").write(domain)
 
 ins.close()
 
 # Get all unique domains
-command = 'sort biz.domains | uniq -u > biz.domains.unique'
+command = 'sort org.domains | uniq -u > org.domains.unique'
 os.system(command)
 
 
